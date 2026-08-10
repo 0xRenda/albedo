@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  albedo:
+    build: .
+    container_name: albedo-checker
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./data:/root/data
+      - ./logs:/root/logs
+    ports:
+      - "8080:8080"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
