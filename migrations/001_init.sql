@@ -1,0 +1,2 @@
+-- See internal/database/db.go for full schema
+-- This file is kept for compatibility
